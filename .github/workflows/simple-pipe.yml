@@ -69,7 +69,7 @@ jobs:
       - name: invoke workflow to create issue
         run: > 
           curl -X POST
-          -H "authorization: Bearer ${{ secrets.WORKFLOW_USE }}"
+          -H "authorization: Bearer ${{ secrets.GITHUB_TOKEN }}"
           -H "Accept: application/vnd.github.v3+json"
           "https://api.github.com/repos/${{ github.repository }}/actions/workflows/create-failure-issue.yml/dispatches"
           -d '{"ref":"main",
